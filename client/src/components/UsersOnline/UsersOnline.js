@@ -13,7 +13,7 @@ const UsersOnline = ({ users }) => (
             <h3>Usuarios conectados:</h3>
             <div className="activeContainer">
                 {users.map(({name, role}) => (
-                  <div key={name} className={`activeItem ${role==='teacher' ? ('messageMod') : null}`}>
+                  <div key={name} className={`activeItem ${role==='mod' ? ('messageMod') : null}`}>
                     {name}
                     <img alt="Online Icon" src={onlineIcon}/>
                   </div>

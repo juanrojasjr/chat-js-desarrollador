@@ -21,14 +21,14 @@ const Message = ({ message: { text, user, roles }, name, role }) => {
           </div>
   }else if(isSentByCurrentUser){
       msg = <div className="messageContainer alignEnd">
-              <p className={`sentText pr-10 ${roles === 'teacher' ? ('messageMod') : ''}`}>{trimmedName}</p>
+              <p className={`sentText pr-10 ${roles === 'mod' ? ('messageMod') : ''}`}>{trimmedName}</p>
               <div className="messageBox backgroundBlue">
                 <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
               </div>
             </div>
   }else{
       msg = <div className="messageContainer alignStart">
-              <p className={`sentText pl-10 ${roles === 'teacher' ? ('messageMod') : ''}`}>{user}</p>
+              <p className={`sentText pl-10 ${roles === 'mod' ? ('messageMod') : ''}`}>{user}</p>
               <div className="messageBox backgroundLight">
                 <p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
               </div>

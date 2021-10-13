@@ -81,7 +81,6 @@ class Register extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    console.log(this.state);
     socket.emit("validUsername", this.state.username, (data) => {
       if (data) {
         MySwal.fire({
@@ -95,6 +94,11 @@ class Register extends Component {
           title: '¡Todo listo!',
           text: 'El usuario ha sido creado.'
         });
+        // Inputs reset
+        Array.from(document.querySelectorAll("input")).forEach(
+          input => (input.value = "")
+        );
+        //create user in db
         socket.emit("createUser", this.state);
       }
     });
@@ -117,7 +121,7 @@ class Register extends Component {
   render() {
     return (
       <div className="joinOuterContainer">
-        <form className="formRegister">
+        <form className="formRegister" autoComplete="off">
           <h2>Registro</h2>
           <p>
             Completa el siguiente formulario para registrarte en la plataforma.
@@ -185,7 +189,7 @@ class Register extends Component {
                 onChange={this.handleUserInput}
               />
             </div>
-            <div
+            {/* <div
               className={`joinInput ${this.errorClass(
                 this.state.formErrors.password
               )}`}
@@ -198,17 +202,17 @@ class Register extends Component {
                 value={this.state.password}
                 onChange={this.handleUserInput}
               />
-            </div>
+            </div> */}
             <div className="joinInput">
               <label htmlFor="role">Rol</label>
               <select
                 className="joinInput"
                 name="role"
-                value="teacher"
+                defaultValue="student"
                 onChange={this.handleUserInput}
               >
-                <option value="teacher">Estudiante</option>
-                <option value="student">Profesor</option>
+                <option value="student">Estudiante</option>
+                <option value="mod">Moderador</option>
               </select>
             </div>
           </div>

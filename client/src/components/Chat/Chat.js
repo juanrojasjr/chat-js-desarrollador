@@ -28,7 +28,7 @@ const Chat = ({ location }) => {
     setName(name);
 
     socket.emit('join', { name, room }, (error) => {
-      if(error === 'teacher' || error === 'student') {
+      if(error === 'mod' || error === 'student') {
         setRole(error);
       }else{
         alert(error);
