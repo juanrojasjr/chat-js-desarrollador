@@ -18,3 +18,19 @@ body {
   background-color: var(--secondary);
   color: var(--dark);
 }
+
+.button {
+  color: var(--white) !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--primary);
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+}
+
+.mt-20 {
+margin-top: 20px;
+}
