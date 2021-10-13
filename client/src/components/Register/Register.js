@@ -5,10 +5,9 @@ import io from "socket.io-client";
 
 import "./Register.css";
 
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
-
 
 let socket = io("localhost:5000");
 
@@ -84,19 +83,19 @@ class Register extends Component {
     socket.emit("validUsername", this.state.username, (data) => {
       if (data) {
         MySwal.fire({
-          icon: 'error',
-          title: 'Oops',
-          text: 'El usuario ya existe, intente con otro.'
+          icon: "error",
+          title: "Oops",
+          text: "El usuario ya existe, intente con otro.",
         });
       } else {
         MySwal.fire({
-          icon: 'success',
-          title: '¡Todo listo!',
-          text: 'El usuario ha sido creado.'
+          icon: "success",
+          title: "¡Todo listo!",
+          text: "El usuario ha sido creado.",
         });
         // Inputs reset
         Array.from(document.querySelectorAll("input")).forEach(
-          input => (input.value = "")
+          (input) => (input.value = "")
         );
         //create user in db
         socket.emit("createUser", this.state);
@@ -189,20 +188,6 @@ class Register extends Component {
                 onChange={this.handleUserInput}
               />
             </div>
-            {/* <div
-              className={`joinInput ${this.errorClass(
-                this.state.formErrors.password
-              )}`}
-            >
-              <label htmlFor="password">Contraseña</label>
-              <input
-                type="password"
-                className="joinInput"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleUserInput}
-              />
-            </div> */}
             <div className="joinInput">
               <label htmlFor="role">Rol</label>
               <select

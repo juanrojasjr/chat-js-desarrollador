@@ -1,28 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import onlineIcon from '../../icons/onlineIcon.png';
+import onlineIcon from "../../icons/onlineIcon.png";
 
-import './UsersOnline.css';
+import "./UsersOnline.css";
 
 const UsersOnline = ({ users }) => (
   <div className="textContainer">
-    {
-      users
-        ? (
-          <div className="usersConnect">
-            <h3>Usuarios conectados:</h3>
-            <div className="activeContainer">
-                {users.map(({name, role}) => (
-                  <div key={name} className={`activeItem ${role==='mod' ? ('messageMod') : null}`}>
-                    {name}
-                    <img alt="Online Icon" src={onlineIcon}/>
-                  </div>
-                ))}
+    {users ? (
+      <div className="usersConnect">
+        <h3>Usuarios conectados:</h3>
+        <div className="activeContainer">
+          {users.map(({ name, role }) => (
+            <div
+              key={name}
+              className={`activeItem ${role === "mod" ? "messageMod" : null}`}
+            >
+              {name}
+              <img alt="Online Icon" src={onlineIcon} />
             </div>
-          </div>
-        )
-        : null
-    }
+          ))}
+        </div>
+      </div>
+    ) : null}
   </div>
 );
 

@@ -14,16 +14,16 @@
 }
 
 .button {
-    color: var(--white) !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background-color: var(--primary);
-    padding: 20px;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    width: 100%;
-    cursor: pointer;
+  color: var(--white) !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: var(--primary);
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  cursor: pointer;
 }
 
 .button:disabled {
@@ -45,24 +45,24 @@ button:focus {
   outline: 0;
 }
 
-.formRegister .formContainer{
+.formRegister .formContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.formRegister .has-error input{
+.formRegister .has-error input {
   border: 2px solid var(--red);
 }
 
-.formRegister .panel-errors p{
+.formRegister .panel-errors p {
   margin: 0;
 }
 
-.formRegister .panel-errors p::before{
-  content: '❌';
+.formRegister .panel-errors p::before {
+  content: "❌";
 }
-.formRegister .formBtns{
+.formRegister .formBtns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;  
+  grid-gap: 30px;
 }

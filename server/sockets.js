@@ -6,12 +6,17 @@ const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 module.exports = function (io) {
   io.on("connect", (socket) => {
     socket.on("join", async ({ name, room }, callback) => {
-      const userRole = await Users.findOne({ "username": name });
-      //console.log(userRole);
+      const userRole = await Users.findOne({ username: name });
       let role = userRole.typeuser;
       let nameFull = userRole.name;
-      
-      const { error, user } = addUser({ id: socket.id, name, room, role, nameFull });
+
+      const { error, user } = addUser({
+        id: socket.id,
+        name,
+        room,
+        role,
+        nameFull,
+      });
 
       if (error) callback(error);
 
@@ -34,26 +39,29 @@ module.exports = function (io) {
       callback(role);
     });
 
-    socket.on('createUser', async data => {
-        /* Add user in DB */
-        let newUser = new Users({
-            name: data.name,
-            username: data.username,
-            password: data.password,
-            typeuser: data.role
-        });
-        await newUser.save();
+    socket.on("createUser", async (data) => {
+      /* Add user in DB */
+      let newUser = new Users({
+        name: data.name,
+        username: data.username,
+        password: data.password,
+        typeuser: data.role,
+      });
+      await newUser.save();
     });
 
-    socket.on('validLogin', async (data, callBack) => {
-      const userValid = await Users.findOne({ "username": data.name, "password": data.pass });
+    socket.on("validLogin", async (data, callBack) => {
+      const userValid = await Users.findOne({
+        username: data.name,
+        password: data.pass,
+      });
       userValid ? callBack(true) : callBack(false);
-  });
+    });
 
-    socket.on('validUsername', async (data, callBack) => {
-      const nameuserValid = await Users.findOne({ "username": data });
+    socket.on("validUsername", async (data, callBack) => {
+      const nameuserValid = await Users.findOne({ username: data });
       nameuserValid ? callBack(true) : callBack(false);
-  });
+    });
 
     socket.on("sendMessage", async (message, callback) => {
       const user = getUser(socket.id);

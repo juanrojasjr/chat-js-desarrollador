@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import Chat from './components/Chat/Chat';
-import Join from './components/Join/Join';
-import Register from './components/Register/Register';
+import Chat from "./components/Chat/Chat";
+import Join from "./components/Join/Join";
+import Register from "./components/Register/Register";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -14,6 +14,6 @@ const App = () => {
       <Route path="/registro" component={Register} />
     </Router>
   );
-}
+};
 
 export default App;

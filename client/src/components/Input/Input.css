@@ -10,7 +10,9 @@
   font-size: 1.2em;
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './Input.css';
+import "./Input.css";
 
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="form">
@@ -10,10 +10,14 @@ const Input = ({ setMessage, sendMessage, message }) => (
       placeholder="Escribe aquí..."
       value={message}
       onChange={({ target: { value } }) => setMessage(value)}
-      onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
+      onKeyPress={(event) =>
+        event.key === "Enter" ? sendMessage(event) : null
+      }
     />
-    <button className="sendButton" onClick={e => sendMessage(e)}>Enviar</button>
+    <button className="sendButton" onClick={(e) => sendMessage(e)}>
+      Enviar
+    </button>
   </form>
-)
+);
 
 export default Input;

@@ -16,12 +16,12 @@
   margin: 0.5rem 0;
 }
 
-.messageMod{
+.messageMod {
   position: relative;
 }
 
-.messageMod::after{
-  content: 'mod';
+.messageMod::after {
+  content: "mod";
   background: var(--orange);
   color: var(--white);
   font-size: 10px;
@@ -43,7 +43,7 @@
   margin-top: 3px;
 }
 
-.messageBot p{
+.messageBot p {
   text-align: center;
   margin: 0;
   color: var(--gray);

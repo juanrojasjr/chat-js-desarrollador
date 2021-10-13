@@ -31,9 +31,9 @@
   border-bottom: 2px solid var(--dark);
 }
 
-.btnGroup{
+.btnGroup {
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

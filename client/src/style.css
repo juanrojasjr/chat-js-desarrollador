@@ -1,10 +1,10 @@
 :root {
-  --primary: #00C1D4;
-  --secondary: #EEEEEE;
-  --red: #F8485E;
-  --orange: #512D6D;
+  --primary: #00c1d4;
+  --secondary: #eeeeee;
+  --red: #f8485e;
+  --orange: #512d6d;
   --white: #fff;
-  --msgOne: #F3F3F3;
+  --msgOne: #f3f3f3;
   --gray: #828282;
   --dark: #181818;
 }
@@ -32,5 +32,5 @@ body {
 }
 
 .mt-20 {
-margin-top: 20px;
+  margin-top: 20px;
 }
