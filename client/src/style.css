@@ -1,0 +1,20 @@
+:root {
+  --primary: #00C1D4;
+  --secondary: #EEEEEE;
+  --red: #F8485E;
+  --orange: #512D6D;
+  --white: #fff;
+  --msgOne: #F3F3F3;
+  --gray: #828282;
+  --dark: #181818;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  background-color: var(--secondary);
+  color: var(--dark);
+}
