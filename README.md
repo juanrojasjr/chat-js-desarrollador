@@ -14,7 +14,7 @@ Para obtener un entorno de desarrollo óptimo y correr satisfactoriamente esta a
 
 ```
 un editor de código (VSC, SublimeText, Atom, etc...)
-npm
+node.js
 mongoDB
 ```
 
